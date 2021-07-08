@@ -8,9 +8,9 @@ export function useRequestData(initialState, FINAL_URL) {
   useEffect(() => {
     axios.get(`${BASE_URL}${FINAL_URL}`)
     .then((res) => {
-      setData(res.data)
+      setData(res)
     }).catch((err) => {
-      alert(err.response.data.message)
+      alert(err)
     })
   }, [FINAL_URL])
 
