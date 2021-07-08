@@ -8,7 +8,7 @@ function login(body, history) {
       window.localStorage.setItem("token", res.data.token)
       goToHome(history)
     }).catch((err) => {
-      alert(err.response.data.message)
+      alert(err)
     })
 }
 

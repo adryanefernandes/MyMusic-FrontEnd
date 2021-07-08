@@ -1,12 +1,13 @@
-import { useForm } from "../hooks/useForm"
-import { useHistory } from 'react-router-dom'
-import login from '../requests/login'
-import { goToSinup } from "../router/coordinator"
+import { useHistory } from 'react-router'
+import { useForm } from '../hooks/useForm'
+import signup from '../requests/signup'
 
-function LoginPage() {
+function SignupPage() {
   const history = useHistory()
-
+  
   const initialState = {
+    name: '',
+    nickname: '',
     email: '',
     password: ''
   }
@@ -14,14 +15,28 @@ function LoginPage() {
 
   const onSubmitForm = (event) => {
     event.preventDefault()
-    login(form, history)
+    signup(form, history)
   }
 
   return <div>
     <section>
       <div>Logo</div>
-      <p>Login</p>
+      <p>Casdastro</p>
       <form onSubmit={onSubmitForm}>
+        <input
+          placeholder="Name"
+          name="name"
+          value={form.name}
+          onChange={onChange}
+          type="text"
+        />
+        <input
+          placeholder="Nickname"
+          name="nickname"
+          value={form.nickname}
+          onChange={onChange}
+          type="text"
+        />
         <input
           placeholder="Email"
           name="email"
@@ -36,14 +51,15 @@ function LoginPage() {
           onChange={onChange}
           type="password"
         />
-        <button type='submit'>Enviar</button>
+        <button type='submit'> Cadastrar</button>
       </form>
-      <button onClick={() => goToSinup(history)}>Casdastro</button>
     </section>
     <section>
       Foto
     </section>
+
+
   </div>
 }
 
-export default LoginPage
+export default SignupPage
