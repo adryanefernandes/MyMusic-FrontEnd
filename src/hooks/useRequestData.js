@@ -6,9 +6,13 @@ export function useRequestData(initialState, FINAL_URL) {
   const [data, setData] = useState(initialState)
 
   useEffect(() => {
-    axios.get(`${BASE_URL}${FINAL_URL}`)
+    axios.get(`${BASE_URL}${FINAL_URL}`, {
+      headers: {
+        authorization: window.localStorage.getItem('token')
+      }
+    })
     .then((res) => {
-      setData(res)
+      setData(res.data)
     }).catch((err) => {
       alert(err)
     })

@@ -1,16 +1,22 @@
 import { useRequestData } from '../hooks/useRequestData'
-import { useEffect } from 'react'
 
 function HomePage() {
-  const musics = useRequestData([])
+  const musics = useRequestData([], '/music/all')
 
-  useEffect(() => {
-    console.log(musics)
-  }, [])
+  const listMusics = musics && musics.map((music) => {
+    return <div>
+      <p>{music.title}</p>
+      <p>{music.author}</p>
+      <p>{music.date}</p>
+      <p>{music.file}</p>
+      <p>{music.genre}</p>
+    </div>
 
+  })
 
   return <div>
-    HomePage
+    Lista de músicas
+    {listMusics}
   </div>
 }
 
