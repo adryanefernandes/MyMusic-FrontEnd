@@ -14,7 +14,7 @@ export function useRequestData(initialState, FINAL_URL) {
     .then((res) => {
       setData(res.data)
     }).catch((err) => {
-      alert(err)
+      console.error(err)
     })
   }, [FINAL_URL])
 
