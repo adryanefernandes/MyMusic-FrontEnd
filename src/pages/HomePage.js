@@ -1,6 +1,10 @@
+import { useHistory } from 'react-router-dom'
 import { useRequestData } from '../hooks/useRequestData'
+import { goToCreateMusic } from '../router/coordinator'
 
 function HomePage() {
+  const history = useHistory()
+
   const musics = useRequestData([], '/music/all')
 
   const listMusics = musics && musics.map((music) => {
@@ -15,7 +19,8 @@ function HomePage() {
   })
 
   return <div>
-    Lista de músicas
+    <p>Lista de músicas</p>
+    <button onClick={() => goToCreateMusic(history)}>Criar música</button>
     {listMusics}
   </div>
 }
