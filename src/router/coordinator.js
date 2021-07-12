@@ -5,3 +5,7 @@ export const goToHome = (history) => {
 export const goToSinup = (history) => {
   history.push('/signup')
 }
+
+export const goToCreateMusic = (history) => {
+  history.push('/create/music')
+}
