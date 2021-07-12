@@ -1,8 +1,10 @@
 import { useHistory } from 'react-router'
 import { useForm } from '../hooks/useForm'
+import { useUnprotectedPage } from '../hooks/useUnprotectedPage'
 import signup from '../requests/signup'
 
 function SignupPage() {
+  useUnprotectedPage()
   const history = useHistory()
   
   const initialState = {

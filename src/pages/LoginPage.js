@@ -2,8 +2,10 @@ import { useForm } from "../hooks/useForm"
 import { useHistory } from 'react-router-dom'
 import login from '../requests/login'
 import { goToSinup } from "../router/coordinator"
+import { useUnprotectedPage } from "../hooks/useUnprotectedPage"
 
 function LoginPage() {
+  useUnprotectedPage()
   const history = useHistory()
 
   const initialState = {

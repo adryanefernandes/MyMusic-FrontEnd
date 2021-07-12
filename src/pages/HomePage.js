@@ -1,8 +1,10 @@
 import { useHistory } from 'react-router-dom'
+import { useProtectedPage } from '../hooks/useProtectedPage'
 import { useRequestData } from '../hooks/useRequestData'
 import { goToCreateMusic } from '../router/coordinator'
 
 function HomePage() {
+  useProtectedPage()
   const history = useHistory()
 
   const musics = useRequestData([], '/music/all')
