@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom"
-import HomePage from "../pages/HomePage"
-import LoginPage from "../pages/LoginPage"
-import SignupPage from "../pages/SignupPage"
+import HomePage from "../pages/home/HomePage"
+import LoginPage from "../pages/login/LoginPage"
+import SignupPage from "../pages/signup/SignupPage"
 import CreateMusicPage from "../pages/createMusic/CreateMusicPage"
 
 function Router(){
