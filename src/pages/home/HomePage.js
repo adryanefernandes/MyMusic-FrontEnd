@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useProtectedPage } from '../../hooks/useProtectedPage'
 import { useRequestData } from '../../hooks/useRequestData'
-import { goToCreateMusic } from '../../router/coordinator'
 import { Header } from '../../components/header/Header'
 import { Footer } from '../../components/footer/Footer'
 
@@ -47,7 +46,6 @@ function HomePage() {
       alignItems="center"
       as="main"
     >
-      {/* <button onClick={() => goToCreateMusic(history)}>Criar música</button> */}
       {listMusics}
     </Grid>
     <Footer />
