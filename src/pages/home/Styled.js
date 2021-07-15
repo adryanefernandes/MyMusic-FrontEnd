@@ -5,12 +5,12 @@ import Card from '@material-ui/core/Card';
 export const Grid = styled.main `
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(min(5), 1fr);
+  grid-template-rows: repeat(4, 8.5rem);
   gap: .5rem;
 
   margin: 1rem 2.5rem;
 
-  min-height: 80vh;
+  min-height: 85vh;
 `
 
 export const MyCard = styled(Card)`
