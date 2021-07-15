@@ -7,7 +7,6 @@ import TextField from '@material-ui/core/TextField';
 import { useHistory } from 'react-router'
 import { useForm } from '../../hooks/useForm'
 import signup from '../../requests/signup'
-import { goToLogin } from '../../router/coordinator';
 import { Copyright } from '../../components/Copyright'
 
 export function SignupForm() {
@@ -85,7 +84,7 @@ export function SignupForm() {
         </Link>
       </Grid>
       <Grid item>
-        <Link href="#" onClick={() => goToLogin(history)} variant="body2">
+        <Link href="/login" variant="body2">
           {"Já tem conta? Faça o login"}
         </Link>
       </Grid>

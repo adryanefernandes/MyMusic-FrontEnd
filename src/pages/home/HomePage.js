@@ -13,10 +13,9 @@ function HomePage() {
 
   const listMusics = musics && musics.map((music) => {
     return <div>
-      <p>{music.title}</p>
+      <a href={music.file}>{music.title}</a>
       <p>{music.author}</p>
       <p>{music.date}</p>
-      <p>{music.file}</p>
       <p>{music.genre}</p>
     </div>
 
@@ -27,7 +26,6 @@ function HomePage() {
     <p>Lista de músicas</p>
     <button onClick={() => goToCreateMusic(history)}>Criar música</button>
     {listMusics}
-
     <Footer />
   </div>
 }

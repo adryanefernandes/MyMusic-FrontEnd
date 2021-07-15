@@ -7,7 +7,6 @@ import { MyButton } from './Styled'
 import TextField from '@material-ui/core/TextField';
 
 
-import { goToSignup } from '../../router/coordinator';
 import { useHistory } from 'react-router-dom'
 import { useForm } from "../../hooks/useForm"
 import { Copyright } from '../../components/Copyright'
@@ -66,12 +65,12 @@ export function LoginForm() {
     </MyButton>
     <Grid container>
       <Grid item xs>
-        <Link href="#" variant="body2">
+        <Link href="" variant="body2">
           Esqueceu a senha?
         </Link>
       </Grid>
       <Grid item>
-        <Link href="#" onClick={() => goToSignup(history)} variant="body2">
+        <Link href="/login" variant="body2">
           {"Não tem uma conta? Faça o cadastro"}
         </Link>
       </Grid>
