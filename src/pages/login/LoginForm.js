@@ -2,9 +2,10 @@ import Box from '@material-ui/core/Box';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
-import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import { Input, MyButton } from './Styled'
+import { MyButton } from './Styled'
+import TextField from '@material-ui/core/TextField';
+
 
 import { goToSignup } from '../../router/coordinator';
 import { useHistory } from 'react-router-dom'
@@ -29,20 +30,19 @@ export function LoginForm() {
   }
 
   return <Box component="form" noValidate onSubmit={onSubmitForm} sx={{ mt: 1 }}>
-    <Input
+    <TextField
       margin="normal"
       required
       fullWidth
       id="email"
       label="Email"
       name="email"
-      autoComplete="email"
       autoFocus
       value={form.email}
       onChange={onChange}
       type="email"
     />
-    <Input
+    <TextField
       margin="normal"
       required
       fullWidth
@@ -50,7 +50,6 @@ export function LoginForm() {
       label="Senha"
       type="password"
       id="password"
-      autoComplete="current-password"
       value={form.password}
       onChange={onChange}
     />
@@ -61,7 +60,6 @@ export function LoginForm() {
     <MyButton
       type="submit"
       fullWidth
-      // variant="contained"
       sx={{ mt: 3, mb: 2 }}
     >
       Login

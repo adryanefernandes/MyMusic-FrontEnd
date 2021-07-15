@@ -9,7 +9,6 @@ import { LoginForm } from './LoginForm'
 import background from '../../assets/login-background.jpg'
 import logoColor from '../../assets/MyMusic-color.png'
 
-
 function LoginPage() {
   useUnprotectedPage()
 
@@ -22,10 +21,6 @@ function LoginPage() {
       sx={{
         backgroundImage: `url(${background})`,
         backgroundRepeat: 'no-repeat',
-        backgroundColor: (theme) =>
-          theme.palette.mode === 'light'
-            ? theme.palette.grey[50]
-            : theme.palette.grey[900],
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
