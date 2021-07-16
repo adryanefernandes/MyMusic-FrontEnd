@@ -11,11 +11,13 @@ export function useRequestData(initialState, FINAL_URL) {
         authorization: window.localStorage.getItem('token')
       }
     })
-    .then((res) => {
-      setData(res.data)
-    }).catch((err) => {
-      console.error(err)
-    })
+      .then((res) => {
+        setData(res.data)
+      }).catch((error) => {
+        if (error.response) {
+          alert(error.response.data.message)
+        }
+      })
   }, [FINAL_URL])
 
   return data
