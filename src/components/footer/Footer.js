@@ -1,5 +1,7 @@
-export function Footer(){
+import { Copyright } from '../Copyright'
+
+export function Footer() {
   return <footer>
-    Rodapé 
+    <Copyright />
   </footer>
 }

@@ -1,10 +1,12 @@
 import Router from './router/Router';
+import { CssBaseline } from '@material-ui/core';
 
 function App() {
   return (
-    <div>
+    <>
+      <CssBaseline />
       <Router />
-    </div>
+    </>
   );
 }
 

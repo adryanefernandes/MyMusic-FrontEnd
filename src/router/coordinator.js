@@ -2,7 +2,7 @@ export const goToHome = (history) => {
   history.push('/')
 }
 
-export const goToSinup = (history) => {
+export const goToSignup = (history) => {
   history.push('/signup')
 }
 
