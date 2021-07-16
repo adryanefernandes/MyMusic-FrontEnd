@@ -12,11 +12,11 @@ export const Grid = styled.main `
 
   min-height: 85vh;
 
-  @media screen and (max-device-width: 425px){
+  @media screen and (max-width: 425px){
     grid-template-columns: 1fr;
   }
 
-  @media screen and (min-device-width: 426px) and (max-device-width: 800px){
+  @media screen and (min-width: 426px) and (max-width: 800px){
     grid-template-columns: 1fr 1fr;
   }
 `

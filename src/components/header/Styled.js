@@ -11,12 +11,12 @@ export const Container = styled.header`
   img {
     width: 8rem;
     
-    @media screen and (max-device-width: 425px){
+    @media screen and (max-width: 425px){
       padding-bottom: 1rem;
     }
   }
 
-  @media screen and (max-device-width: 425px){
+  @media screen and (max-width: 425px){
     flex-direction: column;
   }
 `
