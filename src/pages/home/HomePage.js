@@ -12,9 +12,9 @@ import { MyCard, Grid } from './Styled'
 
 function HomePage() {
   useProtectedPage()
-  const [modalIsOpen, setModalIsOpen] = useState(true)
+  const [modalIsOpen, setModalIsOpen] = useState(false)
   const [musicData, setMusicData] = useState({})
-  
+
   const musicCreationDate = musicData.date && musicData.date.split('T')
   const musicCreationFormattedDate = musicCreationDate && musicCreationDate[0].split('-').reverse().join('/')
 
@@ -43,6 +43,17 @@ function HomePage() {
   return <div>
     <Header />
 
+    {modalIsOpen && <Modal
+      title={musicData.title}
+      author={musicData.author}
+      album={musicData.album}
+      genre={musicData.genre}
+      file={musicData.file}
+      date={musicCreationFormattedDate}
+      closeModal={() => setModalIsOpen(false)}
+    />}
+
+
     <Grid
       container
       direction="row"
@@ -52,14 +63,7 @@ function HomePage() {
     >
       {listMusics}
     </Grid>
-    {modalIsOpen && <Modal
-      title={musicData.title}
-      author={musicData.author}
-      album={musicData.album}
-      genre={musicData.genre}
-      file={musicData.file}
-      date={musicCreationFormattedDate}
-    />}
+
     <Footer />
   </div>
 }
