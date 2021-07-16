@@ -1,24 +1,34 @@
 import { useState } from 'react'
-import { useHistory } from 'react-router-dom'
 import { useProtectedPage } from '../../hooks/useProtectedPage'
 import { useRequestData } from '../../hooks/useRequestData'
 import { Header } from '../../components/header/Header'
 import { Footer } from '../../components/footer/Footer'
+import { Modal } from '../../components/modal/Modal'
 
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
-import { MyCard, Grid, Modal } from './Styled'
+import { MyCard, Grid } from './Styled'
 
 function HomePage() {
   useProtectedPage()
-  const history = useHistory()
-  const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [modalIsOpen, setModalIsOpen] = useState(true)
+  const [musicData, setMusicData] = useState({})
+  
+  const musicCreationDate = musicData.date && musicData.date.split('T')
+  const musicCreationFormattedDate = musicCreationDate && musicCreationDate[0].split('-').reverse().join('/')
 
   const musics = useRequestData([], '/music/all')
 
   const listMusics = musics && musics.map((music) => {
-    return <MyCard>
+    const openModal = (music) => {
+      if (!modalIsOpen) {
+        setModalIsOpen(!modalIsOpen)
+      }
+      setMusicData(music)
+    }
+
+    return <MyCard onClick={() => openModal(music)} key={music.id}>
       <CardContent>
         <Typography gutterBottom color={'#ff0939'} variant="h5" component="h2">
           {music.title}
@@ -27,13 +37,7 @@ function HomePage() {
           {music.author}
         </Typography>
       </CardContent>
-
-
-      {/* <p></p>
-      <p>{music.date}</p>
-      <p>{music.genre}</p> */}
     </MyCard>
-
   })
 
   return <div>
@@ -48,6 +52,14 @@ function HomePage() {
     >
       {listMusics}
     </Grid>
+    {modalIsOpen && <Modal
+      title={musicData.title}
+      author={musicData.author}
+      album={musicData.album}
+      genre={musicData.genre}
+      file={musicData.file}
+      date={musicCreationFormattedDate}
+    />}
     <Footer />
   </div>
 }

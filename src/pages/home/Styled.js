@@ -22,7 +22,6 @@ export const Grid = styled.main `
 `
 
 export const MyCard = styled(Card)`
-  /* max-width: 21rem; */
   margin: 1rem;
 
   display: flex;
