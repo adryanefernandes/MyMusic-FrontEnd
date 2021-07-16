@@ -3,15 +3,13 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
-import { MyButton } from './Styled'
 import TextField from '@material-ui/core/TextField';
-
+import Button from '@material-ui/core/Button';
 
 import { useHistory } from 'react-router-dom'
 import { useForm } from "../../hooks/useForm"
 import { Copyright } from '../../components/Copyright'
 import login from '../../requests/login'
-
 
 
 export function LoginForm() {
@@ -56,13 +54,17 @@ export function LoginForm() {
       control={<Checkbox value="remember" color="primary" />}
       label="Lembre de mim"
     />
-    <MyButton
+    <Button
       type="submit"
       fullWidth
       sx={{ mt: 3, mb: 2 }}
+      style={{
+        background: '#ff0939',
+        color: 'white',
+      }}
     >
       Login
-    </MyButton>
+    </Button>
     <Grid container>
       <Grid item xs>
         <Link href="" variant="body2">
@@ -70,7 +72,7 @@ export function LoginForm() {
         </Link>
       </Grid>
       <Grid item>
-        <Link href="/login" variant="body2">
+        <Link href="/signup" variant="body2">
           {"Não tem uma conta? Faça o cadastro"}
         </Link>
       </Grid>

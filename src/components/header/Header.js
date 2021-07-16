@@ -22,7 +22,7 @@ export function Header() {
   return <Container>
     <img src={Logo} alt={'logo my music in red'} />
 
-    <SearchField>
+    {/* <SearchField>
       <input
         placeholder={'Pesquisar'}
         type="text"
@@ -33,7 +33,7 @@ export function Header() {
       <button>
         <SearchIcon />
       </button>
-    </SearchField>
+    </SearchField> */}
 
     <div>
       {history.location.pathname === "/" &&

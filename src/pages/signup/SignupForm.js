@@ -1,8 +1,8 @@
 import Box from '@material-ui/core/Box';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
-import { MyButton } from './Styled'
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 import { useHistory } from 'react-router'
 import { useForm } from '../../hooks/useForm'
@@ -70,13 +70,17 @@ export function SignupForm() {
       value={form.password}
       onChange={onChange}
     />
-    <MyButton
+    <Button
       type="submit"
       fullWidth
       sx={{ mt: 3, mb: 2 }}
+      style={{
+        background: '#ff0939',
+        color: 'white',
+      }}
     >
-      Cadastrar
-    </MyButton>
+      Casastrar
+    </Button>
     <Grid container>
       <Grid item xs>
         <Link href="#" variant="body2">

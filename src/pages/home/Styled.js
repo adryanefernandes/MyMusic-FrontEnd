@@ -11,10 +11,18 @@ export const Grid = styled.main `
   margin: 1rem 2.5rem;
 
   min-height: 85vh;
+
+  @media screen and (max-device-width: 425px){
+    grid-template-columns: 1fr;
+  }
+
+  @media screen and (min-device-width: 426px) and (max-device-width: 800px){
+    grid-template-columns: 1fr 1fr;
+  }
 `
 
 export const MyCard = styled(Card)`
-  max-width: 345px;
+  /* max-width: 21rem; */
   margin: 1rem;
 
   display: flex;
