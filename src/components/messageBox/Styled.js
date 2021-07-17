@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  background: #F7BEC0;
-  color: #C85250;
+  background: #B1D8B7;
+  color: #2F5233;
   border-radius: 5px;
   display: flex;
 

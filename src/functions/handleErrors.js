@@ -1,13 +1,18 @@
 export function handleErrors(message) {
+  //All forms
   if (message.includes("Fields")) {
     return "Ops! Os campos precisam ser preenchidos."
   }
+
+  //login
   if (message.includes("Incorrect password")) {
     return "Senha incorreta."
   }
   if (message.includes("Unregistered email")) {
     return "Email não registrado."
   }
+
+  //signup
   if (message.includes("email format is incorrect")) {
     return "Formato do email incorreto. Tente algo como: 'email@email.com'."
   }
