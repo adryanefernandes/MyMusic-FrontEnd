@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+<div align="center">
+  <img src='./src/assets/MyMusic-color.png' width="245px" />
+</div>
+  
+<div align="center">
+  <h1>Listagem de músicas :headphones:</h1>
+</div>
+ 
+<p align="center" >
+  <a href="#-sobre-a-aplica%C3%A7%C3%A3o"> Sobre </a> &nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias">Tecnologias</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-conteúdos-aplicados"> Conteúdos aplicados</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-suporte"> Suporte </a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-licen%C3%A7a">Licença</a>
+</p>
+  
+<p align="center">
+  <a href="https://github.com/adryanefernandes" target="_blank"><img src="https://img.shields.io/static/v1?label=author&message=adryanefernandes&color=00d1d7&labelColor=ff0939" alt="Github"> </a>
+    <img src="https://img.shields.io/static/v1?label=languages&message=1&color=00d1d7&labelColor=ff0939" alt="Linguagens"> 
+  </a>
+  <img src="https://img.shields.io/github/stars/adryanefernandes/MyMusic-FrontEnd?color=00d1d7&labelColor=ff0939" alt="Stars">
+  <img src="https://img.shields.io/github/last-commit/adryanefernandes/MyMusic-FrontEnd?color=00d1d7&labelColor=ff0939" alt="Commits">
+  <img src="https://img.shields.io/static/v1?label=license&message=MIT&color=00d1d7&labelColor=ff0939" alt="License">
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+ ## 📌 Sobre a aplicação
+A **MyMusic** é uma aplicação para listagem de músicas. Ao fazer cadastro, você pode adicionar suas músicas favoritas a uma lista compartilhada por todos os usuários, nela é possível fazer pesquisas e conhecer novas músicas. 
 
-In the project directory, you can run:
+Aplicação construida para fins educacionais, uma aplicação onde pude revisar e treinar conceitos tanto sobre o Front como o Back.
+Link para o Back:
+https://github.com/adryanefernandes/MyMusic-BackEnd
 
-### `npm start`
+### 💻 Deploy
+O deploy de aplicação pode ser consultado nesse link
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## ⚙ Tecnologias
+- ReactJS
+- HTML5
+- CSS3
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## 📝 Conteúdos aplicados
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### React
+- [X] **create-react-app**
+- [X] **SPA (Single Page Application)**
+- [X] **Componentes em React**
+- [X] **Context API**
+- [X] **Styled-components**
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🥳 Suporte
+Se esse projeto te ajudou de alguma forma, deixe uma ⭐️!
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📝 Licença
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
 
-### `npm run eject`
+---
+<blockquote>
+    Feito por Adryane Cristine Soares Fernandes 🪐
+</blockquote>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
