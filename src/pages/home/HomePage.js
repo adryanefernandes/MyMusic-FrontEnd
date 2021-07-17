@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useHistory }  from 'react-router-dom'
 import { useProtectedPage } from '../../hooks/useProtectedPage'
 import { useRequestData } from '../../hooks/useRequestData'
 import { Header } from '../../components/header/Header'
@@ -12,14 +13,16 @@ import { MyCard, Grid } from './Styled'
 
 function HomePage() {
   useProtectedPage()
+
+  const history = useHistory()
+
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const [musicData, setMusicData] = useState({})
 
   const musicCreationDate = musicData.date && musicData.date.split('T')
   const musicCreationFormattedDate = musicCreationDate && musicCreationDate[0].split('-').reverse().join('/')
 
-  const musics = useRequestData([], '/music/all')
-  console.log(musics)
+  const musics = useRequestData([], '/music/all', history)
 
   const listMusics = musics && musics.map((music) => {
     const openModal = (music) => {
@@ -53,7 +56,6 @@ function HomePage() {
       date={musicCreationFormattedDate}
       closeModal={() => setModalIsOpen(false)}
     />}
-
 
     <Grid
       container

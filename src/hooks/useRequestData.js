@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { BASE_URL } from '../axiosConfig/BASE_URL'
+import { goToLogin } from '../router/coordinator'
 
-export function useRequestData(initialState, FINAL_URL) {
+export function useRequestData(initialState, FINAL_URL, history) {
   const [data, setData] = useState(initialState)
 
   useEffect(() => {
@@ -17,8 +18,13 @@ export function useRequestData(initialState, FINAL_URL) {
         if (error.response) {
           alert(error.response.data.message)
         }
+
+        if (error.response.data.message.includes('jwt expired')) {
+          window.localStorage.removeItem('token')
+          goToLogin(history)
+        }
       })
-  }, [FINAL_URL])
+  }, [FINAL_URL, history])
 
   return data
 }
