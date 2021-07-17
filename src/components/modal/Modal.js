@@ -1,5 +1,6 @@
 import { Container, ModalContainer } from './Styled'
 import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
 import CloseIcon from '@material-ui/icons/Close';
 
 export function Modal(props) {
@@ -28,11 +29,11 @@ export function Modal(props) {
         {props.date}
       </Typography>
 
-      {/* <Typography variant="subtitle1" color="textSecondary" component="h4">
-        {props.file}
-      </Typography> */}
-
-      <audio src={props.file.data} constrols/>
+      <Typography variant="subtitle1" color="textSecondary" component="a">
+        <Link href={props.file}>
+          {props.file}
+        </Link>
+      </Typography>
     </ModalContainer>
   </Container>
 }

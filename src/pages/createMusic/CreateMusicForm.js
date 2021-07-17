@@ -63,8 +63,8 @@ export function CreateMusicForm() {
         required
         fullWidth
         name="file"
-        // label="Arquivo"
-        type="file"
+        label="Arquivo"
+        type="text"
         id="file"
         value={form.file}
         onChange={onChange}
