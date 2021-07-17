@@ -12,7 +12,7 @@ export function Modal(props) {
         </button>
       </div>
 
-      <Typography gutterBottom color={'#ff0939'} variant="h4" component="h2">
+      <Typography gutterBottom width={'85%'} color={'#ff0939'} variant="h4" component="h2">
         {props.title}
       </Typography>
       <Typography variant="subtitle1" color="textSecondary" component="h4">
@@ -25,12 +25,14 @@ export function Modal(props) {
         <span>Gênero: </span>{props.genre}
       </Typography>
       <Typography variant="subtitle1" color="textSecondary" component="h4">
-        <span></span>{props.date}
+        {props.date}
       </Typography>
 
       <Typography variant="subtitle1" color="textSecondary" component="h4">
-        <span></span>{props.file}
+        {props.file}
       </Typography>
+
+      <audio src={props.file.data} constrols/>
     </ModalContainer>
   </Container>
 }

@@ -6,14 +6,19 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
+import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useForm } from "../../hooks/useForm"
 import { Copyright } from '../../components/Copyright'
+import { ErrorBox } from '../../components/errorBox/ErrorBox'
 import login from '../../requests/login'
+import { handleErrors } from '../../functions/handleErrors';
 
 
 export function LoginForm() {
   const history = useHistory()
+  const [errorMessage, setErrorMessage] = useState('')
+  const [gaveError, setGaveError] = useState(false)
 
   const initialState = {
     email: '',
@@ -21,9 +26,14 @@ export function LoginForm() {
   }
   const [form, onChange] = useForm(initialState)
 
-  const onSubmitForm = (event) => {
+  const onSubmitForm = async (event) => {
     event.preventDefault()
-    login(form, history)
+    login(form, history, setErrorMessage, setGaveError)
+  }
+
+  let translatedMessage
+  if (gaveError && errorMessage) {
+    translatedMessage = handleErrors(errorMessage)
   }
 
   return <Box component="form" noValidate onSubmit={onSubmitForm} sx={{ mt: 1 }}>
@@ -54,6 +64,15 @@ export function LoginForm() {
       control={<Checkbox value="remember" color="primary" />}
       label="Lembre de mim"
     />
+
+    {gaveError &&
+      <ErrorBox
+        message={translatedMessage ? translatedMessage : errorMessage}
+        closeMessage={() => setGaveError(false)}
+      />
+    }
+
+
     <Button
       type="submit"
       fullWidth

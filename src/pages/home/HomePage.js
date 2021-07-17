@@ -19,6 +19,7 @@ function HomePage() {
   const musicCreationFormattedDate = musicCreationDate && musicCreationDate[0].split('-').reverse().join('/')
 
   const musics = useRequestData([], '/music/all')
+  console.log(musics)
 
   const listMusics = musics && musics.map((music) => {
     const openModal = (music) => {

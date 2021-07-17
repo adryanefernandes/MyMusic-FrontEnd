@@ -1,18 +1,17 @@
 import Logo from '../../assets/MyMusic-color.png'
-import { Container, SearchField } from './Styled'
-import SearchIcon from '@material-ui/icons/Search';
+import { Container } from './Styled'
 import Button from '@material-ui/core/Button';
 
 import { useHistory } from "react-router";
 import { goToLogin } from "../../router/coordinator";
-import { useForm } from '../../hooks/useForm'
+// import { useForm } from '../../hooks/useForm'
 import { goToCreateMusic } from '../../router/coordinator'
 
 export function Header() {
   const history = useHistory()
 
-  const initialState = { search: '' }
-  const [form, handleInput] = useForm(initialState)
+  // const initialState = { search: '' }
+  // const [form, handleInput] = useForm(initialState)
 
   const logout = () => {
     window.localStorage.removeItem("token")
