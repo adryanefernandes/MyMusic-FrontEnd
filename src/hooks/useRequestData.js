@@ -15,10 +15,6 @@ export function useRequestData(initialState, FINAL_URL, history) {
       .then((res) => {
         setData(res.data)
       }).catch((error) => {
-        if (error.response) {
-          alert(error.response.data.message)
-        }
-
         if (error.response.data.message.includes('jwt expired')) {
           window.localStorage.removeItem('token')
           goToLogin(history)

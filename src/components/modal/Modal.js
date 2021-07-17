@@ -28,9 +28,9 @@ export function Modal(props) {
         {props.date}
       </Typography>
 
-      <Typography variant="subtitle1" color="textSecondary" component="h4">
+      {/* <Typography variant="subtitle1" color="textSecondary" component="h4">
         {props.file}
-      </Typography>
+      </Typography> */}
 
       <audio src={props.file.data} constrols/>
     </ModalContainer>

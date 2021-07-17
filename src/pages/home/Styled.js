@@ -21,6 +21,38 @@ export const Grid = styled.main `
   }
 `
 
+export const SearchField = styled.div` 
+  display: flex;
+  align-items: center;
+  border: 1px solid #b8b8b8;
+  width: 13.5rem;
+  margin: auto;
+  margin-top: 1rem;
+
+  input{
+    height: 2rem;
+    padding: .5rem;
+    border: none;
+    
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: none;
+  }
+
+  button {
+    height: 2rem;
+    padding: .1rem;
+    border: none;
+
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(0, 0, 0, .15 );
+    }
+  }
+  
+`
+
 export const MyCard = styled(Card)`
   margin: 1rem;
 
