@@ -39,7 +39,5 @@ export const ButtonGroup = styled.main`
 `
 
 export const MyButton = styled(Button)`
-  background: #ff0939;
-  color: white;
   width: 50%;
 `

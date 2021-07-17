@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Button from '@material-ui/core/Button';
 
 export const Container = styled.header`
   padding: .8rem 1rem;
@@ -11,6 +10,14 @@ export const Container = styled.header`
 
   img {
     width: 8rem;
+    
+    @media screen and (max-width: 425px){
+      padding-bottom: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 425px){
+    flex-direction: column;
   }
 `
 

@@ -11,10 +11,49 @@ export const Grid = styled.main `
   margin: 1rem 2.5rem;
 
   min-height: 85vh;
+
+  @media screen and (max-width: 425px){
+    grid-template-columns: 1fr;
+  }
+
+  @media screen and (min-width: 426px) and (max-width: 800px){
+    grid-template-columns: 1fr 1fr;
+  }
+`
+
+export const SearchField = styled.div` 
+  display: flex;
+  align-items: center;
+  border: 1px solid #b8b8b8;
+  width: 13.5rem;
+  margin: auto;
+  margin-top: 1rem;
+
+  input{
+    height: 2rem;
+    padding: .5rem;
+    border: none;
+    
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: none;
+  }
+
+  button {
+    height: 2rem;
+    padding: .1rem;
+    border: none;
+
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(0, 0, 0, .15 );
+    }
+  }
+  
 `
 
 export const MyCard = styled(Card)`
-  max-width: 345px;
   margin: 1rem;
 
   display: flex;

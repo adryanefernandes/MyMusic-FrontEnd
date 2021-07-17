@@ -1,10 +1,13 @@
+import { useState } from 'react'
 import { useForm } from '../../hooks/useForm'
 import { createMusic } from '../../requests/createMusic'
+import { ErrorBox } from '../../components/errorBox/ErrorBox'
+import { handleErrors } from '../../functions/handleErrors';
 
 import Box from '@material-ui/core/Box';
 import { MyButton, ButtonGroup } from './Styled'
 import TextField from '@material-ui/core/TextField';
-
+import { MessageBox } from '../../components/messageBox/MessageBox';
 
 export function CreateMusicForm() {
   const initialState = {
@@ -15,11 +18,20 @@ export function CreateMusicForm() {
     album: ""
   }
   const [form, onChange, resetForm] = useForm(initialState)
+  const [errorMessage, setErrorMessage] = useState('')
+  const [gaveError, setGaveError] = useState(false)
+  const [createdMusic, setCreatedMusic] = useState(false)
 
   const onSubmitForm = (event) => {
     event.preventDefault()
-    createMusic(form, resetForm)
+    createMusic(form, resetForm, setErrorMessage, setGaveError, setCreatedMusic)
   }
+
+  let translatedMessage
+  if (gaveError && errorMessage) {
+    translatedMessage = handleErrors(errorMessage)
+  }
+
 
   return <div>
     <Box component="form" noValidate onSubmit={onSubmitForm} sx={{ mt: 1 }}>
@@ -79,6 +91,19 @@ export function CreateMusicForm() {
         value={form.album}
         onChange={onChange}
       />
+
+      {gaveError &&
+        <ErrorBox
+          message={translatedMessage ? translatedMessage : errorMessage}
+          closeMessage={() => setGaveError(false)}
+        />
+      }
+      {createdMusic &&
+        <MessageBox
+          message={"Música criada!"}
+          closeMessage={() => setCreatedMusic(false)}
+        />
+      }
 
       <ButtonGroup>
         <MyButton

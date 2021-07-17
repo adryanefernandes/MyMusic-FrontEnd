@@ -1,16 +1,21 @@
 import Box from '@material-ui/core/Box';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
-import { MyButton } from './Styled'
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
+import { useState } from 'react'
 import { useHistory } from 'react-router'
 import { useForm } from '../../hooks/useForm'
 import signup from '../../requests/signup'
 import { Copyright } from '../../components/Copyright'
+import { handleErrors } from '../../functions/handleErrors';
+import { ErrorBox } from '../../components/errorBox/ErrorBox'
 
 export function SignupForm() {
   const history = useHistory()
+  const [errorMessage, setErrorMessage] = useState('')
+  const [gaveError, setGaveError] = useState(false)
 
   const initialState = {
     name: '',
@@ -22,7 +27,12 @@ export function SignupForm() {
 
   const onSubmitForm = (event) => {
     event.preventDefault()
-    signup(form, history)
+    signup(form, history, setErrorMessage, setGaveError)
+  }
+
+  let translatedMessage
+  if (gaveError && errorMessage) {
+    translatedMessage = handleErrors(errorMessage)
   }
 
   return <Box component="form" noValidate onSubmit={onSubmitForm} sx={{ mt: 1 }}>
@@ -70,13 +80,26 @@ export function SignupForm() {
       value={form.password}
       onChange={onChange}
     />
-    <MyButton
+
+    {gaveError &&
+      <ErrorBox
+        message={translatedMessage ? translatedMessage : errorMessage}
+        closeMessage={() => setGaveError(false)}
+      />
+    }
+
+
+    <Button
       type="submit"
       fullWidth
       sx={{ mt: 3, mb: 2 }}
+      style={{
+        background: '#ff0939',
+        color: 'white',
+      }}
     >
       Cadastrar
-    </MyButton>
+    </Button>
     <Grid container>
       <Grid item xs>
         <Link href="#" variant="body2">
