@@ -15,8 +15,8 @@
 </p>
   
 <p align="center">
-  <a href="https://github.com/adryanefernandes" target="_blank"><img src="https://img.shields.io/static/v1?label=author&message=adryanefernandes&color=00d1d7&labelColor=ff0939" alt="Github"> </a>
-    <img src="https://img.shields.io/static/v1?label=languages&message=1&color=00d1d7&labelColor=ff0939" alt="Linguagens"> 
+  <a href="https://github.com/adryanefernandes" target="_blank">
+    <img src="https://img.shields.io/static/v1?label=author&message=adryanefernandes&color=00d1d7&labelColor=ff0939" alt="Github"> 
   </a>
   <img src="https://img.shields.io/github/stars/adryanefernandes/MyMusic-FrontEnd?color=00d1d7&labelColor=ff0939" alt="Stars">
   <img src="https://img.shields.io/github/last-commit/adryanefernandes/MyMusic-FrontEnd?color=00d1d7&labelColor=ff0939" alt="Commits">
