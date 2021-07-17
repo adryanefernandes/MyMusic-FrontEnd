@@ -33,6 +33,7 @@ https://github.com/adryanefernandes/MyMusic-BackEnd
 
 ### 💻 Deploy
 O deploy de aplicação pode ser consultado nesse link
+http://mymusic-front.s3-website-us-east-1.amazonaws.com
 
 ## ⚙ Tecnologias
 - ReactJS
