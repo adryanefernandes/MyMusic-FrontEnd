@@ -23,5 +23,6 @@ export const Container = styled.div`
 
   p{
     padding: .8rem;
+    width: 92%;
   }
 `
